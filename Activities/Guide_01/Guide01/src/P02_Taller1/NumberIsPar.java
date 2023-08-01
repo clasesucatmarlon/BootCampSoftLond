@@ -1,4 +1,4 @@
-package P02_Taller2;
+package P02_Taller1;
 
 import javax.swing.*;
 
