@@ -20,7 +20,7 @@ public class App {
                     "15) Número es capicúa?.                                   16) Primeros n términos de fibonacci. \n" +
                     "17) Números primos entre m y n.                     18) Generar password. \n" +
                     "19) Convertir cadena a min y may.                   20) Invertir cadena. \n" +
-                    "21) Contar letra dentro de palabra.                   21) Invertir cadena. \n" +
+                    "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -84,11 +84,25 @@ public class App {
                 case 21:
                     countLettersIntoStr();
                     break;
+                case 22:
+                    isPalindromo();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void isPalindromo() {
+        // example tes: A mamá, Roma le aviva el amor a papá y a papá, roma le aviva el amor a mamá
+        String str = JOptionPane.showInputDialog(null, "Input a phrase o word: ", "DETERMINE PALINDROMO  ", JOptionPane.INFORMATION_MESSAGE);
+        Boolean isPalindromo = OperationsWithNumbers.isPalindromo(str);
+        if (isPalindromo) {
+            JOptionPane.showMessageDialog(null, ("The phrase \"" + str + "\" is palindromo"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, ("The phrase \"" + str + "\" not is palindromo"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     private static void countLettersIntoStr() {

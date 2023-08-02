@@ -214,4 +214,22 @@ public class OperationsWithNumbers {
         return countAppears;
     }
 
+    public static Boolean isPalindromo (String str) {
+        str = str.replace(" ", "");
+        str = str.replace(",", "");
+        str = str.replace(".", "");
+        str = str.replace("/", "");
+        str = str.replace("á", "a");
+        str = str.replace("é", "é");
+        str = str.replace("í", "í");
+        str = str.replace("ó", "ó");
+        str = str.replace("ú", "ú");
+        String strInvert = invertString(str);
+        if (strInvert.toUpperCase().equals(str.toUpperCase())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
