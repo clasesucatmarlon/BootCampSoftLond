@@ -20,6 +20,7 @@ public class App {
                     "   8) Adivinar número entre 1 y 100. \n" +
                     "   9) Calcular factorial. \n" +
                     "  10) Primeros n términos de fibonacci. \n" +
+                    "  11) Área de triángulo con Herón. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -53,11 +54,22 @@ public class App {
                 case 10:
                     fibonacci();
                     break;
+                case 11:
+                    areaTriangleWithHeron();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void areaTriangleWithHeron() {
+        int sideA = Integer.parseInt(JOptionPane.showInputDialog(null, "Input side A: ", "AREA TRIANGLE USING HERON  ", JOptionPane.INFORMATION_MESSAGE));
+        int sideB = Integer.parseInt(JOptionPane.showInputDialog(null, "Input side B: ", "AREA TRIANGLE USING HERON  ", JOptionPane.INFORMATION_MESSAGE));
+        int sideC = Integer.parseInt(JOptionPane.showInputDialog(null, "Input side C: ", "AREA TRIANGLE USING HERON  ", JOptionPane.INFORMATION_MESSAGE));
+        String msg = "The area of triangle of sides: A = " + sideA + ", B = " + sideB + " C = " + sideC + " is ";
+        JOptionPane.showMessageDialog(null, (msg + OperationsWithNumbers.AreaTriangleWithHeron(sideA, sideB, sideC)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void fibonacci() {

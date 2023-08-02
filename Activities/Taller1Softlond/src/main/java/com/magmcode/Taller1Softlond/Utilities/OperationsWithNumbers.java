@@ -99,4 +99,10 @@ public class OperationsWithNumbers {
         }
         return msg;
     }
+
+    public static Float AreaTriangleWithHeron(int sideA, int sideB, int sideC) {
+        float semiPerimeter = (sideA + sideB + sideC) / 2;
+        float radicando =  (semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
+        return (float) Math.sqrt( radicando );
+    }
 }
