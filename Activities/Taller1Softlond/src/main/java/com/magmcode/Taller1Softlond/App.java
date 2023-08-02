@@ -26,6 +26,7 @@ public class App {
                     "  14) Número es perfecto?. \n" +
                     "  15) Número es capicúa?. \n" +
                     "  16) Primeros n términos de fibonacci. \n" +
+                    "  17) Números primos entre m y n. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -74,11 +75,26 @@ public class App {
                 case 15:
                     numberCapicua();
                     break;
+                case 17:
+                    listNumbersPrimes();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void listNumbersPrimes() {
+        int number1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number1: ", "PRIMES NUMBERS  ", JOptionPane.INFORMATION_MESSAGE));
+        int number2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number2: ", "PRIMES NUMBERS  ", JOptionPane.INFORMATION_MESSAGE));
+        String msg = "";
+        for (int i = number1; i <= number2; i++) {
+            if ( OperationsWithNumbers.NumberIsPrime(i)) {
+                msg += i + ", ";
+            }
+        }
+        JOptionPane.showMessageDialog(null, ("The numbers primes between" + number1 + " and " + number2 + "are: \n" + msg ), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void numberCapicua() {

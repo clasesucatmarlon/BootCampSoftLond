@@ -113,7 +113,7 @@ public class OperationsWithNumbers {
                 count++;
             }
         }
-        if (count <= 2) {
+        if (count == 2) {
             return true;
         } else{
             return false;
