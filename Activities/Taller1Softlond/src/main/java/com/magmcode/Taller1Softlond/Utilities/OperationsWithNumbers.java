@@ -190,4 +190,16 @@ public class OperationsWithNumbers {
     }
 
 
+    public static String invertString (String str) {
+        char[] chars = str.toCharArray();
+        String strInvert = "";
+        int index = chars.length - 1;
+        for (int i = 0; i < chars.length; i++) {
+            strInvert += chars[index];
+            index--;
+        }
+        return strInvert;
+    }
+
+
 }
