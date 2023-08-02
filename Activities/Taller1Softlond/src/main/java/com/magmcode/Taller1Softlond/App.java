@@ -22,6 +22,7 @@ public class App {
                     "  10) Primeros n términos de fibonacci. \n" +
                     "  11) Área de triángulo con Herón. \n" +
                     "  12) Número es primo?. \n" +
+                    "  13) Redondear número a n decimales?. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -61,11 +62,20 @@ public class App {
                 case 12:
                     numberIsPrime();
                     break;
+                case 13:
+                    roundNumber();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void roundNumber() {
+        float numberToRound = Float.parseFloat(JOptionPane.showInputDialog(null, "Input a number to round: ", "ROUND NUMBER  ", JOptionPane.INFORMATION_MESSAGE));
+        int numberDecimals = Integer.parseInt(JOptionPane.showInputDialog(null, "Input a number of positions decimals: ", "ROUND NUMBER  ", JOptionPane.INFORMATION_MESSAGE));
+        JOptionPane.showMessageDialog(null, ("The number round with " + numberDecimals + " positions decimals is: " + OperationsWithNumbers.RoundNumber(numberToRound, numberDecimals)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void numberIsPrime() {

@@ -120,5 +120,16 @@ public class OperationsWithNumbers {
         }
     }
 
+    public static Double RoundNumber(float numberToRound, int numberDecimals) {
+        double partInteger;
+        double result;
+        result = numberToRound;
+        partInteger = Math.floor(result);
+        result = (result - partInteger) * Math.pow(10, numberDecimals);
+        result = Math.round(result);
+        result = (result / Math.pow(10, numberDecimals)) + partInteger;
+        return result;
+    }
+
 
 }
