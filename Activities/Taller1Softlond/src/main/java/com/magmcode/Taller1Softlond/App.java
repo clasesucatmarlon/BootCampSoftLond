@@ -21,6 +21,7 @@ public class App {
                     "   9) Calcular factorial. \n" +
                     "  10) Primeros n términos de fibonacci. \n" +
                     "  11) Área de triángulo con Herón. \n" +
+                    "  12) Número es primo?. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -57,11 +58,24 @@ public class App {
                 case 11:
                     areaTriangleWithHeron();
                     break;
+                case 12:
+                    numberIsPrime();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void numberIsPrime() {
+        int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input a number: ", "NUMBER PRIME  ", JOptionPane.INFORMATION_MESSAGE));
+        boolean isPrime = OperationsWithNumbers.NumberIsPrime(number);
+        if (isPrime) {
+            JOptionPane.showMessageDialog(null, ("The number " + number + " is prime" ), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        } else{
+            JOptionPane.showMessageDialog(null, ("The number " + number + " not is prime" ), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     private static void areaTriangleWithHeron() {
