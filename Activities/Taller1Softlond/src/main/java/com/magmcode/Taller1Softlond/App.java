@@ -16,6 +16,7 @@ public class App {
                     "  4) Es mayor de edad?. \n" +
                     "  5) Número mayor. \n" +
                     "  6) Validar número. \n" +
+                    "  7) Generar tabla hasta el 10 de un número. \n" +
                     "  0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -38,11 +39,19 @@ public class App {
                     int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number: ", "VALIDATE NUMBER ", JOptionPane.INFORMATION_MESSAGE));
                     JOptionPane.showMessageDialog(null, ("The number " + number + " is: " + OperationsWithNumbers.ValidateNumber(number)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
                     break;
+                case 7:
+                    generateTable();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void generateTable() {
+        int numberInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number positive: ", "GENERATE TABLE FOR A NUMBER ", JOptionPane.INFORMATION_MESSAGE));
+        OperationsWithNumbers.GenerateTableForNumber(numberInput);
     }
 
     private static void numberMajor() {

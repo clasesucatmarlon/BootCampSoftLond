@@ -57,4 +57,17 @@ public class OperationsWithNumbers {
         }
     }
 
+    public static void GenerateTableForNumber (int number) {
+
+        if (number < 0) {
+            JOptionPane.showMessageDialog(null, ("The number " + number + " not is positive. \n You must enter a number greater than zero"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        String msg = "";
+        for (int i = 1; i <= 10; i++) {
+            msg += (number + " * " + i + " = " + (number * i) + "\n");
+        }
+        JOptionPane.showMessageDialog(null, msg, "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }
