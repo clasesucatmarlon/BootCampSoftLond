@@ -22,6 +22,7 @@ public class App {
                     "19) Convertir cadena a min y may.                   20) Invertir cadena. \n" +
                     "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
                     "23) Contar palabras dentro de oración.            24) Remplace letras de una palabra. \n" +
+                    "25) Mostrar palabras de una frase.            25) . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -94,11 +95,24 @@ public class App {
                 case 24:
                     replaceLetterIntoPhrase();
                     break;
+                case 25:
+                    showWordsIntoPhrase();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void showWordsIntoPhrase() {
+        String str = JOptionPane.showInputDialog(null, "Input a phrase o word: ", "SHOW LETTERS INTO PHRASE  ", JOptionPane.INFORMATION_MESSAGE);
+        String[] arrayWords = OperationsWithNumbers.splitPhrase(str);
+        String msg = "";
+        for (String word : arrayWords) {
+            msg += word + "\n";
+        }
+        JOptionPane.showMessageDialog(null, ("The words of the phrase \"" + str + "\" are: \n" + msg), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void replaceLetterIntoPhrase() {

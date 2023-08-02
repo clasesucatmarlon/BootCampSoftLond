@@ -1,6 +1,7 @@
 package com.magmcode.Taller1Softlond.Utilities;
 
 import javax.swing.*;
+import java.util.List;
 
 public class OperationsWithNumbers {
     public static Integer add(int a, int b) {
@@ -240,6 +241,11 @@ public class OperationsWithNumbers {
     public static String replaceLettersInPhrase (String phrase, String letterOld, String letterNew) {
         phrase = phrase.replace(letterOld, letterNew);
         return phrase;
+    }
+
+    public static String[] splitPhrase (String str) {
+        String[] arrayWords = str.split(" ");
+        return arrayWords;
     }
 
 }
