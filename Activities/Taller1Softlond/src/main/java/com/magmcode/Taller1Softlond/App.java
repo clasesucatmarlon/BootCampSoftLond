@@ -24,6 +24,7 @@ public class App {
                     "  12) Número es primo?. \n" +
                     "  13) Redondear número a n decimales. \n" +
                     "  14) Número es perfecto?. \n" +
+                    "  15) Número es capicúa?. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -69,11 +70,24 @@ public class App {
                 case 14:
                     numberPerfect();
                     break;
+                case 15:
+                    numberCapicua();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void numberCapicua() {
+        long number = Long.parseLong(JOptionPane.showInputDialog(null, "Input a number: ", "CAPICUA NUMBER  ", JOptionPane.INFORMATION_MESSAGE));
+        boolean isCapicua = OperationsWithNumbers.isCapicua(number);
+        if (isCapicua) {
+            JOptionPane.showMessageDialog(null, ("The number " + number + " is Capicua"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, ("The number " + number + " not is Capicua"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     private static void numberPerfect() {

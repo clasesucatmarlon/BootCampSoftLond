@@ -145,5 +145,21 @@ public class OperationsWithNumbers {
         }
     }
 
+    public static Boolean isCapicua (long number) {
+        long rest;
+        long invert = 0;
+        long copyNumber = number;
+        while(number != 0) {
+            rest = number % 10;
+            invert = (invert * 10) + rest;
+            number = number / 10;
+        }
+        if (invert == copyNumber) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }
