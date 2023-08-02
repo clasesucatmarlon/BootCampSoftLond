@@ -237,4 +237,9 @@ public class OperationsWithNumbers {
         return arrayWords.length;
     }
 
+    public static String replaceLettersInPhrase (String phrase, String letterOld, String letterNew) {
+        phrase = phrase.replace(letterOld, letterNew);
+        return phrase;
+    }
+
 }
