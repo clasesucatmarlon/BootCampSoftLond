@@ -20,6 +20,7 @@ public class App {
                     "15) Número es capicúa?.                                   16) Primeros n términos de fibonacci. \n" +
                     "17) Números primos entre m y n.                     18) Generar password. \n" +
                     "19) Convertir cadena a min y may.                   20) Invertir cadena. \n" +
+                    "21) Contar letra dentro de palabra.                   21) Invertir cadena. \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -80,11 +81,21 @@ public class App {
                 case 20:
                     inverseString();
                     break;
+                case 21:
+                    countLettersIntoStr();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void countLettersIntoStr() {
+        String str = JOptionPane.showInputDialog(null, "Input a text: ", "COUNT LETTER INTO TEXT  ", JOptionPane.INFORMATION_MESSAGE);
+        String letter = JOptionPane.showInputDialog(null, "Input letter: ", "COUNT LETTER INTO TEXT  ", JOptionPane.INFORMATION_MESSAGE);
+        int count = OperationsWithNumbers.countLettersIntoString(str, letter);
+        JOptionPane.showMessageDialog(null, ("The letter " + letter + " appear " + count + " times in the string " + str), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void inverseString() {

@@ -202,4 +202,16 @@ public class OperationsWithNumbers {
     }
 
 
+    public static Integer countLettersIntoString (String str, String letter) {
+        int index = 0;
+        int countAppears = 0;
+        //se busca la primera vez que aparece
+        index = str.indexOf("a");
+        while (index != -1) {
+            countAppears++;
+            index = str.indexOf("a", index + 1);
+        }
+        return countAppears;
+    }
+
 }
