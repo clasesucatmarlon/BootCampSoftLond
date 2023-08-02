@@ -17,6 +17,7 @@ public class App {
                     "  5) Número mayor. \n" +
                     "  6) Validar número. \n" +
                     "  7) Generar tabla hasta el 10 de un número. \n" +
+                    "  8) Adivinar número entre 1 y 100. \n" +
                     "  0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -42,11 +43,31 @@ public class App {
                 case 7:
                     generateTable();
                     break;
+                case 8:
+                    guessNumber();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void guessNumber() {
+        int number;
+        int countAttempts = 1;
+        int numberRandom = OperationsWithNumbers.generateNumberRandomBetweenTwoValues(21, 100);
+        do {
+            number = Integer.parseInt(JOptionPane.showInputDialog(null, "Attempts: " + countAttempts + "\nInput number for guess: ", "GUESS A NUMBER ", JOptionPane.INFORMATION_MESSAGE));
+            if (number > numberRandom) {
+                JOptionPane.showMessageDialog(null, ("The number " + number + " is greater than the random number"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+            } else if (number < numberRandom) {
+                JOptionPane.showMessageDialog(null, ("The number " + number + " is less than the random number"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, ("CONGRATULATIOS!!!!.  you guessed the number in " + countAttempts + " attempts"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+            }
+            countAttempts++;
+        } while (numberRandom != number);
     }
 
     private static void generateTable() {
