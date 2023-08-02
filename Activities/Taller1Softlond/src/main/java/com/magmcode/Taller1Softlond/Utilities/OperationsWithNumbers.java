@@ -1,8 +1,6 @@
 package com.magmcode.Taller1Softlond.Utilities;
 
 import javax.swing.*;
-import java.text.DecimalFormat;
-
 
 public class OperationsWithNumbers {
     public static Integer add(int a, int b) {
@@ -159,6 +157,36 @@ public class OperationsWithNumbers {
         } else {
             return false;
         }
+    }
+
+    public static String generatePassword2(int size) {
+        char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
+
+        String msg = "";
+        for (int i = 0; i < size; i++)
+        {
+            int randomIndex = generateNumberRandomBetweenTwoValues(0, chars.length - 1);
+            msg += chars[randomIndex];
+        }
+        return msg;
+    }
+
+    public static String generatePassword(int size) {
+        String msg = "";
+        for (int i = 0; i < size; i++) {
+            int rand = (int)(Math.random() * 62);  // 10 numbers, 26 uppercase letter, 26 lowercase letters
+            if(rand <= 9) {
+                int number = rand + 48; // Number (48-57 in ASCII)
+                msg += (char)(number);
+            } else if(rand <= 35) { //Uppercase letter (65-90 in ASCII)
+                int uppercase = rand + 55; // 65 - 10 = 55
+                msg += (char)(uppercase);
+            } else { //Lowercase letter (97-122 in ASCII)
+                int lowercase = rand + 61; // 97 - 10 num - 26 uppercase letters = 61
+                msg += (char)(lowercase);
+            }
+        }
+        return msg;
     }
 
 

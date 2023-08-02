@@ -27,6 +27,7 @@ public class App {
                     "  15) Número es capicúa?. \n" +
                     "  16) Primeros n términos de fibonacci. \n" +
                     "  17) Números primos entre m y n. \n" +
+                    "  18) Generar password. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -78,11 +79,19 @@ public class App {
                 case 17:
                     listNumbersPrimes();
                     break;
+                case 18:
+                    generatePassword();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void generatePassword() {
+        JOptionPane.showMessageDialog(null, ("Method with array: \nThe password is: " + OperationsWithNumbers.generatePassword2(8)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, ("Method with ASCII: \nThe password is: " + OperationsWithNumbers.generatePassword(8)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void listNumbersPrimes() {
