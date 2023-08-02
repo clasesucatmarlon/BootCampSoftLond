@@ -232,4 +232,9 @@ public class OperationsWithNumbers {
         }
     }
 
+    public static Integer countWordIntoString (String str) {
+        String[] arrayWords = str.split(" ");
+        return arrayWords.length;
+    }
+
 }

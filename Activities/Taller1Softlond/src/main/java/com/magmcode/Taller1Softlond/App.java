@@ -21,6 +21,7 @@ public class App {
                     "17) Números primos entre m y n.                     18) Generar password. \n" +
                     "19) Convertir cadena a min y may.                   20) Invertir cadena. \n" +
                     "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
+                    "23) Contar palabras dentro de oración.                   24) . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -87,11 +88,19 @@ public class App {
                 case 22:
                     isPalindromo();
                     break;
+                case 23:
+                    countWordsIntoPhrase();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void countWordsIntoPhrase() {
+        String str = JOptionPane.showInputDialog(null, "Input a phrase o word: ", "COUNT WORDS INTO PHRASE  ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, ("The phrase \"" + str + "\" have " + OperationsWithNumbers.countWordIntoString(str) + " words"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void isPalindromo() {
