@@ -25,6 +25,7 @@ public class App {
                     "  13) Redondear número a n decimales. \n" +
                     "  14) Número es perfecto?. \n" +
                     "  15) Número es capicúa?. \n" +
+                    "  16) Primeros n términos de fibonacci. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -55,7 +56,7 @@ public class App {
                 case 9:
                     factorial();
                     break;
-                case 10:
+                case 10, 16:
                     fibonacci();
                     break;
                 case 11:
