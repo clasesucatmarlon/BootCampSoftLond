@@ -9,26 +9,17 @@ public class App {
     public static void main(String[] args) {
         boolean showMenu = true;
         do {
-            String msgMenu = "Figura a crear: \n" +
-                    "   1) Operaciones matemáticas. \n" +
-                    "   2) Número es par?. \n" +
-                    "   3) Área y perímetro de círculo. \n" +
-                    "   4) Es mayor de edad?. \n" +
-                    "   5) Número mayor. \n" +
-                    "   6) Validar número. \n" +
-                    "   7) Generar tabla hasta el 10 de un número. \n" +
-                    "   8) Adivinar número entre 1 y 100. \n" +
-                    "   9) Calcular factorial. \n" +
-                    "  10) Primeros n términos de fibonacci. \n" +
-                    "  11) Área de triángulo con Herón. \n" +
-                    "  12) Número es primo?. \n" +
-                    "  13) Redondear número a n decimales. \n" +
-                    "  14) Número es perfecto?. \n" +
-                    "  15) Número es capicúa?. \n" +
-                    "  16) Primeros n términos de fibonacci. \n" +
-                    "  17) Números primos entre m y n. \n" +
-                    "  18) Generar password. \n" +
-                    "   0) Salir. \n";
+            String msgMenu = "Seleccione opción: \n" +
+                    "1) Operaciones matemáticas.                            2) Número es par?.\n" +
+                    "3) Área y perímetro de círculo.                          4) Es mayor de edad?.\n" +
+                    "5) Número mayor.                                                6) Validar número. \n" +
+                    "7) Generar tabla hasta el 10 de un número.      8) Adivinar número entre 1 y 100. \n" +
+                    "9) Calcular factorial.                                            10) Primeros n términos de fibonacci. \n" +
+                    "11) Área de triángulo con Herón.                      12) Número es primo?. \n" +
+                    "13) Redondear número a n decimales.            14) Número es perfecto?. \n" +
+                    "15) Número es capicúa?.                                   16) Primeros n términos de fibonacci. \n" +
+                    "17) Números primos entre m y n.                     18) Generar password. \n" +
+                    "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
                 case 1:
