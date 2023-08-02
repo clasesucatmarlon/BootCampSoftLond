@@ -22,7 +22,8 @@ public class App {
                     "  10) Primeros n términos de fibonacci. \n" +
                     "  11) Área de triángulo con Herón. \n" +
                     "  12) Número es primo?. \n" +
-                    "  13) Redondear número a n decimales?. \n" +
+                    "  13) Redondear número a n decimales. \n" +
+                    "  14) Número es perfecto?. \n" +
                     "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -65,11 +66,24 @@ public class App {
                 case 13:
                     roundNumber();
                     break;
+                case 14:
+                    numberPerfect();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void numberPerfect() {
+        int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input a number: ", "PERFECT NUMBER  ", JOptionPane.INFORMATION_MESSAGE));
+        boolean isPerfect = OperationsWithNumbers.NumberIsPerfect(number);
+        if (isPerfect) {
+            JOptionPane.showMessageDialog(null, ("The number " + number + " is Perfect"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, ("The number " + number + " not is Perfect"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     private static void roundNumber() {

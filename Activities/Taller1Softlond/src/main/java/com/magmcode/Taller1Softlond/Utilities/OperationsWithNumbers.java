@@ -131,5 +131,19 @@ public class OperationsWithNumbers {
         return result;
     }
 
+    public static Boolean NumberIsPerfect (int number) {
+        int acum = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                acum = acum + i;
+            }
+        }
+        if (acum == number) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }
