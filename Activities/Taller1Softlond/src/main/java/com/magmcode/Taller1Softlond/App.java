@@ -10,16 +10,17 @@ public class App {
         boolean showMenu = true;
         do {
             String msgMenu = "Figura a crear: \n" +
-                    "  1) Operaciones matemáticas. \n" +
-                    "  2) Número es par?. \n" +
-                    "  3) Área y perímetro de círculo. \n" +
-                    "  4) Es mayor de edad?. \n" +
-                    "  5) Número mayor. \n" +
-                    "  6) Validar número. \n" +
-                    "  7) Generar tabla hasta el 10 de un número. \n" +
-                    "  8) Adivinar número entre 1 y 100. \n" +
-                    "  9) Calcular factorial. \n" +
-                    "  0) Salir. \n";
+                    "   1) Operaciones matemáticas. \n" +
+                    "   2) Número es par?. \n" +
+                    "   3) Área y perímetro de círculo. \n" +
+                    "   4) Es mayor de edad?. \n" +
+                    "   5) Número mayor. \n" +
+                    "   6) Validar número. \n" +
+                    "   7) Generar tabla hasta el 10 de un número. \n" +
+                    "   8) Adivinar número entre 1 y 100. \n" +
+                    "   9) Calcular factorial. \n" +
+                    "  10) Primeros n términos de fibonacci. \n" +
+                    "   0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
                 case 1:
@@ -49,11 +50,19 @@ public class App {
                 case 9:
                     factorial();
                     break;
+                case 10:
+                    fibonacci();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void fibonacci() {
+        int numbers = Integer.parseInt(JOptionPane.showInputDialog(null, "How many numbers you want to generate: ", "FIBONACCI SERIE ", JOptionPane.INFORMATION_MESSAGE));
+        JOptionPane.showMessageDialog(null, ("The first " + numbers + " elements of fibonacci serie are: \n" + OperationsWithNumbers.FibonacciSerie(numbers)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void factorial() {

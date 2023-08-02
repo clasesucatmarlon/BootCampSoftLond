@@ -82,4 +82,21 @@ public class OperationsWithNumbers {
         }
         return factorial;
     }
+
+    public static String FibonacciSerie (int termins) {
+        int valueCurrent = 0;
+        int valueNext = 1;
+        String msg = "";
+        int fibonacci;
+        msg += valueCurrent + ", ";
+        msg += valueNext + ", ";
+
+        for (int i = 2; i < termins; i++) {
+            fibonacci = valueCurrent + valueNext;
+            msg += fibonacci + ", ";
+            valueCurrent = valueNext;
+            valueNext = fibonacci;
+        }
+        return msg;
+    }
 }
