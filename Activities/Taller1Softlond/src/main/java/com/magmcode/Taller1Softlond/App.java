@@ -15,6 +15,7 @@ public class App {
                     "  3) Área y perímetro de círculo. \n" +
                     "  4) Es mayor de edad?. \n" +
                     "  5) Número mayor. \n" +
+                    "  6) Validar número. \n" +
                     "  0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -32,6 +33,10 @@ public class App {
                     break;
                 case 5:
                     numberMajor();
+                    break;
+                case 6:
+                    int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number: ", "VALIDATE NUMBER ", JOptionPane.INFORMATION_MESSAGE));
+                    JOptionPane.showMessageDialog(null, ("The number " + number + " is: " + OperationsWithNumbers.ValidateNumber(number)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 0:
                     showMenu = false;

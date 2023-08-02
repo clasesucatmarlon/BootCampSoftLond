@@ -47,4 +47,14 @@ public class OperationsWithNumbers {
         return (number1 > number2) ? number1 : number2;
     }
 
+    public static String ValidateNumber (int number) {
+        if (number > 0) {
+            return "POSITIVE";
+        } else if (number < 0) {
+            return "NEGATIVE";
+        } else {
+            return "ZERO";
+        }
+    }
+
 }
