@@ -19,6 +19,7 @@ public class App {
                     "13) Redondear número a n decimales.            14) Número es perfecto?. \n" +
                     "15) Número es capicúa?.                                   16) Primeros n términos de fibonacci. \n" +
                     "17) Números primos entre m y n.                     18) Generar password. \n" +
+                    "19) Convertir cadena a min y may.                     20) . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -73,11 +74,20 @@ public class App {
                 case 18:
                     generatePassword();
                     break;
+                case 19:
+                    changeStrUppercaseLowercase();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void changeStrUppercaseLowercase() {
+        String str = JOptionPane.showInputDialog(null, "Input a text: ", "LOWERCASE STRING  ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, ("The string " + str + " in lowercase is: " + str.toLowerCase()), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, ("The string " + str + " in uppercase is: " + str.toUpperCase()), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void generatePassword() {
