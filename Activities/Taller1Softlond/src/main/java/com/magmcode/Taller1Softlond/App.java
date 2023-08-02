@@ -18,6 +18,7 @@ public class App {
                     "  6) Validar número. \n" +
                     "  7) Generar tabla hasta el 10 de un número. \n" +
                     "  8) Adivinar número entre 1 y 100. \n" +
+                    "  9) Calcular factorial. \n" +
                     "  0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -37,8 +38,7 @@ public class App {
                     numberMajor();
                     break;
                 case 6:
-                    int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number: ", "VALIDATE NUMBER ", JOptionPane.INFORMATION_MESSAGE));
-                    JOptionPane.showMessageDialog(null, ("The number " + number + " is: " + OperationsWithNumbers.ValidateNumber(number)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+                    validateNumber();
                     break;
                 case 7:
                     generateTable();
@@ -46,11 +46,24 @@ public class App {
                 case 8:
                     guessNumber();
                     break;
+                case 9:
+                    factorial();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void factorial() {
+        int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input a number: ", "NUMBER FACTORIAL ", JOptionPane.INFORMATION_MESSAGE));
+        JOptionPane.showMessageDialog(null, ("The factorial of " + number + " is " + OperationsWithNumbers.NumberFactorial(number)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private static void validateNumber() {
+        int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Input number: ", "VALIDATE NUMBER ", JOptionPane.INFORMATION_MESSAGE));
+        JOptionPane.showMessageDialog(null, ("The number " + number + " is: " + OperationsWithNumbers.ValidateNumber(number)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void guessNumber() {

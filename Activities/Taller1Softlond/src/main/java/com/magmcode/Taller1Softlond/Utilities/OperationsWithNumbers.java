@@ -73,4 +73,13 @@ public class OperationsWithNumbers {
     public static Integer generateNumberRandomBetweenTwoValues(int minNumber, int maxNumber) {
         return (int) (Math.random() * (maxNumber - minNumber +1 ) + 1);
     }
+
+    public static Long NumberFactorial (long number) {
+        long factorial = 1;
+
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
 }
