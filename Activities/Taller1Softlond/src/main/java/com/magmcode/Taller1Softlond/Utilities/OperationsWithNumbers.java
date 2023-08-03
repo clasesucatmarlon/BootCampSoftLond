@@ -301,6 +301,18 @@ public class OperationsWithNumbers {
         return listNumbers;
     }
 
+    public static ArrayList<Integer> findElementInArray (ArrayList<Integer> listNumbers, int numberFind) {
+        // listNumbers.indexOf(numberFind);
+        ArrayList<Integer> listIndex = new ArrayList<>();
+        for (int i = 0; i < listNumbers.size() - 1; i++) {
+            if (listNumbers.get(i) == numberFind) {
+                listIndex.add(i);
+            }
+        }
+        return listIndex;
+
+    }
+
 
 
 

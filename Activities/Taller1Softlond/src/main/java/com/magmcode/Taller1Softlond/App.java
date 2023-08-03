@@ -25,10 +25,10 @@ public class App {
                     "19) Convertir cadena a min y may.                   20) Invertir cadena. \n" +
                     "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
                     "23) Contar palabras dentro de oración.            24) Remplace letras de una palabra. \n" +
-                    "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase . \n" +
-                    "27) Ordenar palabras de una frase.                   28) Sumar elementos de un array . \n" +
-                    "29) Número máximo de un arreglo.                   30) Eliminar elementos duplicados de un array . \n" +
-                    "31) Ordenamiento por burbuja.                   32) Eliminar elementos duplicados de un array . \n" +
+                    "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase. \n" +
+                    "27) Ordenar palabras de una frase.                   28) Sumar elementos de un array. \n" +
+                    "29) Número máximo de un arreglo.                  30) Eliminar elementos duplicados de un array. \n" +
+                    "31) Ordenamiento por burbuja.                         32) Buscar número en array y mostrar índice. \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -122,11 +122,26 @@ public class App {
                 case 31:
                     sortBubble();
                     break;
+                case 32:
+                    findNumberIntoArray();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void findNumberIntoArray() {
+        ArrayList<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(12, 200, 112, 30, 2, 2, 12, 200, 112, 30, 200, 1, 2, 12, 1, 5));
+        Integer numberFind = Integer.parseInt(JOptionPane.showInputDialog(null, "Input a number to find: ", "SORT WORDS OF A PHRASE  ", JOptionPane.INFORMATION_MESSAGE));
+
+        ArrayList<Integer> listIndex = OperationsWithNumbers.findElementInArray(arrayNumbers, numberFind);
+        if (listIndex.size() == 0) {
+            JOptionPane.showMessageDialog(null, ("The number " + numberFind + " Not is into array"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        JOptionPane.showMessageDialog(null, ("The number " + numberFind + " is in the positions: " + listIndex), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void sortBubble() {
