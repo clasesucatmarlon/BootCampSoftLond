@@ -268,5 +268,15 @@ public class OperationsWithNumbers {
         return String.join(", ", words);
     }
 
+    public static Integer maxValueInArray (List<Integer> arrayNumber) {
+        int maxNumber = 0;
+        for (int num : arrayNumber) {
+            if (num > maxNumber) {
+                maxNumber = num;
+            }
+        }
+        return maxNumber;
+    }
+
 
 }

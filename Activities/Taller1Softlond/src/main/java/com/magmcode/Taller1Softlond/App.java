@@ -27,6 +27,7 @@ public class App {
                     "23) Contar palabras dentro de oración.            24) Remplace letras de una palabra. \n" +
                     "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase . \n" +
                     "27) Ordenar palabras de una frase.                   28) Sumar elementos de un array . \n" +
+                    "29) Número máximo de un arreglo.                   30) Sumar elementos de un array . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -111,11 +112,20 @@ public class App {
                 case 28:
                     sumElementsArray();
                     break;
+                case 29:
+                    maxValueOfArray();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void maxValueOfArray() {
+        List<Integer> arrayNumbers = Arrays.asList(12, 200, 112, 30);
+        JOptionPane.showMessageDialog(null, ("The max value of " + arrayNumbers + " is: " + OperationsWithNumbers.maxValueInArray(arrayNumbers)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        return;
     }
 
     private static void sortWordsOfPhrase() {
