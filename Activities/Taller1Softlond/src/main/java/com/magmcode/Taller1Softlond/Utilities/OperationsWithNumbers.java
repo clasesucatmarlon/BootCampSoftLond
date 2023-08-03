@@ -1,8 +1,7 @@
 package com.magmcode.Taller1Softlond.Utilities;
 
 import javax.swing.*;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class OperationsWithNumbers {
     public static Integer add(int a, int b) {
@@ -277,6 +276,26 @@ public class OperationsWithNumbers {
         }
         return maxNumber;
     }
+
+    public static List<Integer> deleteDuplicatesInArray (List<Integer> nums) {
+        // construye un conjunto a partir de elementos de la lista
+        Set<Integer> set = new LinkedHashSet<>(nums);
+
+        // construir una nueva lista a partir de un conjunto e imprimirla
+        List<Integer> listWithoutDuplicates = new ArrayList<>(set);
+        return listWithoutDuplicates;
+    }
+
+
+
+    // lista de entrada con duplicados
+    // List<String> listWithDuplicates = new ArrayList<>(Arrays.asList("C++", "Java", "C++"));
+
+    // construye un conjunto a partir de elementos de la lista
+    // Set<String> set = new LinkedHashSet<>(listWithDuplicates);
+
+    // construir una nueva lista a partir de un conjunto e imprimirla
+    // List<String> listWithoutDuplicates = new ArrayList<>(set);
 
 
 }
