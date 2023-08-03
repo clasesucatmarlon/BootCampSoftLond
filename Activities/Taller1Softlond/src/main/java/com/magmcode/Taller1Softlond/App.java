@@ -28,6 +28,7 @@ public class App {
                     "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase . \n" +
                     "27) Ordenar palabras de una frase.                   28) Sumar elementos de un array . \n" +
                     "29) Número máximo de un arreglo.                   30) Eliminar elementos duplicados de un array . \n" +
+                    "31) Ordenamiento por burbuja.                   32) Eliminar elementos duplicados de un array . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -118,11 +119,19 @@ public class App {
                 case 30:
                     deleteDuplicates();
                     break;
+                case 31:
+                    sortBubble();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void sortBubble() {
+        ArrayList<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(12, 200, 112, 30, 2, 2, 12, 200, 112, 30, 200, 1, 2, 12, 1, 5));
+        JOptionPane.showMessageDialog(null, ("The new Array is  " + OperationsWithNumbers.sortArrayByBubble(arrayNumbers)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void deleteDuplicates() {

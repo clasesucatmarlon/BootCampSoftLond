@@ -70,10 +70,10 @@ public class OperationsWithNumbers {
     }
 
     public static Integer generateNumberRandomBetweenTwoValues(int minNumber, int maxNumber) {
-        return (int) (Math.random() * (maxNumber - minNumber +1 ) + 1);
+        return (int) (Math.random() * (maxNumber - minNumber + 1) + 1);
     }
 
-    public static Long NumberFactorial (long number) {
+    public static Long NumberFactorial(long number) {
         long factorial = 1;
 
         for (int i = 1; i <= number; i++) {
@@ -82,7 +82,7 @@ public class OperationsWithNumbers {
         return factorial;
     }
 
-    public static String FibonacciSerie (int termins) {
+    public static String FibonacciSerie(int termins) {
         int valueCurrent = 0;
         int valueNext = 1;
         String msg = "";
@@ -101,20 +101,20 @@ public class OperationsWithNumbers {
 
     public static Float AreaTriangleWithHeron(int sideA, int sideB, int sideC) {
         float semiPerimeter = (sideA + sideB + sideC) / 2;
-        float radicando =  (semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
-        return (float) Math.sqrt( radicando );
+        float radicando = (semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
+        return (float) Math.sqrt(radicando);
     }
 
-    public static Boolean NumberIsPrime (int number) {
+    public static Boolean NumberIsPrime(int number) {
         int count = 0;
         for (int i = 1; i <= number; i++) {
-            if((number % i) == 0) {
+            if ((number % i) == 0) {
                 count++;
             }
         }
         if (count == 2) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
@@ -130,7 +130,7 @@ public class OperationsWithNumbers {
         return result;
     }
 
-    public static Boolean NumberIsPerfect (int number) {
+    public static Boolean NumberIsPerfect(int number) {
         int acum = 0;
         for (int i = 1; i < number; i++) {
             if (number % i == 0) {
@@ -144,11 +144,11 @@ public class OperationsWithNumbers {
         }
     }
 
-    public static Boolean isCapicua (long number) {
+    public static Boolean isCapicua(long number) {
         long rest;
         long invert = 0;
         long copyNumber = number;
-        while(number != 0) {
+        while (number != 0) {
             rest = number % 10;
             invert = (invert * 10) + rest;
             number = number / 10;
@@ -164,8 +164,7 @@ public class OperationsWithNumbers {
         char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
 
         String msg = "";
-        for (int i = 0; i < size; i++)
-        {
+        for (int i = 0; i < size; i++) {
             int randomIndex = generateNumberRandomBetweenTwoValues(0, chars.length - 1);
             msg += chars[randomIndex];
         }
@@ -175,23 +174,23 @@ public class OperationsWithNumbers {
     public static String generatePassword(int size) {
         String msg = "";
         for (int i = 0; i < size; i++) {
-            int rand = (int)(Math.random() * 62);  // 10 numbers, 26 uppercase letter, 26 lowercase letters
-            if(rand <= 9) {
+            int rand = (int) (Math.random() * 62);  // 10 numbers, 26 uppercase letter, 26 lowercase letters
+            if (rand <= 9) {
                 int number = rand + 48; // Number (48-57 in ASCII)
-                msg += (char)(number);
-            } else if(rand <= 35) { //Uppercase letter (65-90 in ASCII)
+                msg += (char) (number);
+            } else if (rand <= 35) { //Uppercase letter (65-90 in ASCII)
                 int uppercase = rand + 55; // 65 - 10 = 55
-                msg += (char)(uppercase);
+                msg += (char) (uppercase);
             } else { //Lowercase letter (97-122 in ASCII)
                 int lowercase = rand + 61; // 97 - 10 num - 26 uppercase letters = 61
-                msg += (char)(lowercase);
+                msg += (char) (lowercase);
             }
         }
         return msg;
     }
 
 
-    public static String invertString (String str) {
+    public static String invertString(String str) {
         char[] chars = str.toCharArray();
         String strInvert = "";
         int index = chars.length - 1;
@@ -203,7 +202,7 @@ public class OperationsWithNumbers {
     }
 
 
-    public static Integer countLettersIntoString (String str, String letter) {
+    public static Integer countLettersIntoString(String str, String letter) {
         int index = 0;
         int countAppears = 0;
         //se busca la primera vez que aparece
@@ -215,7 +214,7 @@ public class OperationsWithNumbers {
         return countAppears;
     }
 
-    public static Boolean isPalindromo (String str) {
+    public static Boolean isPalindromo(String str) {
         str = str.replace(" ", "");
         str = str.replace(",", "");
         str = str.replace(".", "");
@@ -233,27 +232,27 @@ public class OperationsWithNumbers {
         }
     }
 
-    public static Integer countWordIntoString (String str) {
+    public static Integer countWordIntoString(String str) {
         String[] arrayWords = str.split(" ");
         return arrayWords.length;
     }
 
-    public static String replaceLettersInPhrase (String phrase, String letterOld, String letterNew) {
+    public static String replaceLettersInPhrase(String phrase, String letterOld, String letterNew) {
         phrase = phrase.replace(letterOld, letterNew);
         return phrase;
     }
 
-    public static String[] splitPhrase (String str) {
+    public static String[] splitPhrase(String str) {
         String[] arrayWords = str.split(" ");
         return arrayWords;
     }
 
-    public static Integer countCharsPhraseWithoutBlank (String str) {
+    public static Integer countCharsPhraseWithoutBlank(String str) {
         str = str.replace(" ", "");
         return str.length();
     }
 
-    public static Integer sumElementsArray (List<Integer> arrayNumbers) {
+    public static Integer sumElementsArray(List<Integer> arrayNumbers) {
         int sum = 0;
         for (int num : arrayNumbers) {
             sum += num;
@@ -261,13 +260,13 @@ public class OperationsWithNumbers {
         return sum;
     }
 
-    public static String sortWordsOfPhrase (String str) {
+    public static String sortWordsOfPhrase(String str) {
         String[] words = splitPhrase(str);
         Arrays.sort(words);
         return String.join(", ", words);
     }
 
-    public static Integer maxValueInArray (List<Integer> arrayNumber) {
+    public static Integer maxValueInArray(List<Integer> arrayNumber) {
         int maxNumber = 0;
         for (int num : arrayNumber) {
             if (num > maxNumber) {
@@ -277,7 +276,7 @@ public class OperationsWithNumbers {
         return maxNumber;
     }
 
-    public static List<Integer> deleteDuplicatesInArray (List<Integer> nums) {
+    public static List<Integer> deleteDuplicatesInArray(List<Integer> nums) {
         // construye un conjunto a partir de elementos de la lista
         Set<Integer> set = new LinkedHashSet<>(nums);
 
@@ -286,16 +285,23 @@ public class OperationsWithNumbers {
         return listWithoutDuplicates;
     }
 
+    public static ArrayList<Integer> sortArrayByBubble(ArrayList<Integer> listNumbers) {
+        int aux;
+        for (int i = 0; i < listNumbers.size() - 1; i++) {
+            // En cada pasada, comparamos los elementos adyacentes y los intercambiamos si están desordenados
+            for (int j = 0; j < listNumbers.size() - i - 1; j++) {
+                if (listNumbers.get(j) > listNumbers.get(j + 1)) {
+                    // Intercambiar los elementos
+                    int temp = listNumbers.get(j);
+                    listNumbers.set(j, listNumbers.get(j + 1));
+                    listNumbers.set(j + 1, temp);
+                }
+            }
+        }
+        return listNumbers;
+    }
 
 
-    // lista de entrada con duplicados
-    // List<String> listWithDuplicates = new ArrayList<>(Arrays.asList("C++", "Java", "C++"));
-
-    // construye un conjunto a partir de elementos de la lista
-    // Set<String> set = new LinkedHashSet<>(listWithDuplicates);
-
-    // construir una nueva lista a partir de un conjunto e imprimirla
-    // List<String> listWithoutDuplicates = new ArrayList<>(set);
 
 
 }
