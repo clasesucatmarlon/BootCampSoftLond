@@ -22,7 +22,7 @@ public class App {
                     "19) Convertir cadena a min y may.                   20) Invertir cadena. \n" +
                     "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
                     "23) Contar palabras dentro de oración.            24) Remplace letras de una palabra. \n" +
-                    "25) Mostrar palabras de una frase.            25) . \n" +
+                    "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -98,11 +98,19 @@ public class App {
                 case 25:
                     showWordsIntoPhrase();
                     break;
+                case 26:
+                    countCharsWithoutBlanks();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void countCharsWithoutBlanks() {
+        String str = JOptionPane.showInputDialog(null, "Input a phrase o word: ", "COUNT CHARS INTO PHRASE WITHOUT BLANK SPACES  ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, ("The phrase \"" + str + "\" have: " + OperationsWithNumbers.countCharsPhraseWithoutBlank(str) + " characters"), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void showWordsIntoPhrase() {

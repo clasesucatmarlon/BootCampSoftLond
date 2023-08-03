@@ -248,4 +248,9 @@ public class OperationsWithNumbers {
         return arrayWords;
     }
 
+    public static Integer countCharsPhraseWithoutBlank (String str) {
+        str = str.replace(" ", "");
+        return str.length();
+    }
+
 }
