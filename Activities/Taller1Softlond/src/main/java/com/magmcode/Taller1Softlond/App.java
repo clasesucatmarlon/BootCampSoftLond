@@ -30,6 +30,7 @@ public class App {
                     "29) Número máximo de un arreglo.                  30) Eliminar elementos duplicados de un array. \n" +
                     "31) Ordenamiento por burbuja.                         32) Buscar número en array y mostrar índice. \n" +
                     "33) Frecuencia de apariciones.                         34) Rotar elemento de un array (izq / Der). \n" +
+                    "35) Tabla de multiplicar del 1 al 10\n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -131,6 +132,9 @@ public class App {
                     break;
                 case 34:
                     rotateList();
+                    break;
+                case 35:
+                    OperationsWithNumbers.multiplicationTable();
                     break;
                 case 0:
                     showMenu = false;

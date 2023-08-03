@@ -338,6 +338,15 @@ public class OperationsWithNumbers {
         return  arrayList;
     }
 
-
+    public static void multiplicationTable () {
+        for (int i = 1; i <= 10; i++) {
+            String table = "Multiplication table of " + i + ":\n";
+            for (int j = 1; j <= 10; j++) {
+                int result = i * j;
+                table += i + " x " + j + " = " + result + "\n";
+            }
+            JOptionPane.showMessageDialog(null, table, "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 
 }
