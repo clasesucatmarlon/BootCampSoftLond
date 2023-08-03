@@ -4,6 +4,9 @@ import com.magmcode.Taller1Softlond.Utilities.OperationsWithNumbers;
 
 import javax.swing.*;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -23,6 +26,7 @@ public class App {
                     "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
                     "23) Contar palabras dentro de oración.            24) Remplace letras de una palabra. \n" +
                     "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase . \n" +
+                    "27) Mostrar palabras de una frase.                   28) Contar caracteres de frase . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -101,11 +105,24 @@ public class App {
                 case 26:
                     countCharsWithoutBlanks();
                     break;
+                case 27:
+                    sumElementsArray();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void sumElementsArray() {
+        // ArrayList<Integer> listNumbers = new ArrayList<Integer>();
+        // listNumbers.add(12);
+        // listNumbers.add(2);
+        // listNumbers.add(112);
+        // listNumbers.add(30);
+        List<Integer> arrayNumbers = Arrays.asList(12, 2,112, 30);
+        JOptionPane.showMessageDialog(null, ("The sum of numbers " + arrayNumbers + " is: " + OperationsWithNumbers.sumElementsArray(arrayNumbers)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void countCharsWithoutBlanks() {

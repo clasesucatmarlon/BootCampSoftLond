@@ -253,4 +253,12 @@ public class OperationsWithNumbers {
         return str.length();
     }
 
+    public static Integer sumElementsArray (List<Integer> arrayNumbers) {
+        int sum = 0;
+        for (int num : arrayNumbers) {
+            sum += num;
+        }
+        return sum;
+    }
+
 }
