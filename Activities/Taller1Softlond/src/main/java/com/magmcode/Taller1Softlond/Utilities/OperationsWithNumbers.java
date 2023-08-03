@@ -322,6 +322,22 @@ public class OperationsWithNumbers {
         return frequency;
     }
 
+    public static ArrayList<Integer> arrayRotateLeft(ArrayList<Integer> arrayList, int positions) {
+        int longArray = arrayList.size();
+        positions = positions % longArray; // Para asegurarse de no rotar más de una vuelta completa
+        // Rotar el ArrayList hacia la izquierda positions veces
+        Collections.rotate(arrayList, -positions);
+        return  arrayList;
+    }
+
+    public static ArrayList<Integer> arrayRotateRight(ArrayList<Integer> arrayList, int positions) {
+        int longArray = arrayList.size();
+        positions = positions % longArray; // Para asegurarse de no rotar más de una vuelta completa
+        // Rotar el ArrayList hacia la derecha k veces
+        Collections.rotate(arrayList, positions);
+        return  arrayList;
+    }
+
 
 
 }
