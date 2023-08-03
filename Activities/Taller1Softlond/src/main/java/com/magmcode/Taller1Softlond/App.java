@@ -29,6 +29,7 @@ public class App {
                     "27) Ordenar palabras de una frase.                   28) Sumar elementos de un array. \n" +
                     "29) Número máximo de un arreglo.                  30) Eliminar elementos duplicados de un array. \n" +
                     "31) Ordenamiento por burbuja.                         32) Buscar número en array y mostrar índice. \n" +
+                    "33) Frecuencia de apariciones.                         34) . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -125,11 +126,19 @@ public class App {
                 case 32:
                     findNumberIntoArray();
                     break;
+                case 33:
+                    frecuencyElementosIntoArray();
+                    break;
                 case 0:
                     showMenu = false;
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void frecuencyElementosIntoArray() {
+        ArrayList<Integer> arrayNumbers = new ArrayList<>(Arrays.asList(12, 200, 112, 30, 2, 2, 12, 200, 112, 30, 200, 1, 2, 12, 1, 5));
+        JOptionPane.showMessageDialog(null, ("The frequency of elements of array: \n" + arrayNumbers + "\n" +  OperationsWithNumbers.frequencyElementosInArray(arrayNumbers)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void findNumberIntoArray() {

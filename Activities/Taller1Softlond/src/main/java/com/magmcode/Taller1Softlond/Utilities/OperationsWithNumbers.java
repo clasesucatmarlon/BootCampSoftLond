@@ -310,9 +310,17 @@ public class OperationsWithNumbers {
             }
         }
         return listIndex;
-
     }
 
+
+    public static String frequencyElementosInArray (ArrayList listNumbers) {
+        Set<Integer> distinct = new HashSet<>(listNumbers);
+        String frequency = "";
+        for (Integer s: distinct) {
+            frequency += s + ": " + Collections.frequency(listNumbers, s) + "\n";
+        }
+        return frequency;
+    }
 
 
 
