@@ -1,6 +1,7 @@
 package com.magmcode.Taller1Softlond.Utilities;
 
 import javax.swing.*;
+import java.util.Arrays;
 import java.util.List;
 
 public class OperationsWithNumbers {
@@ -260,5 +261,12 @@ public class OperationsWithNumbers {
         }
         return sum;
     }
+
+    public static String sortWordsOfPhrase (String str) {
+        String[] words = splitPhrase(str);
+        Arrays.sort(words);
+        return String.join(", ", words);
+    }
+
 
 }

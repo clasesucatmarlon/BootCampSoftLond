@@ -26,7 +26,7 @@ public class App {
                     "21) Contar letra dentro de palabra.                   22) Frase es palíndrome?. \n" +
                     "23) Contar palabras dentro de oración.            24) Remplace letras de una palabra. \n" +
                     "25) Mostrar palabras de una frase.                   26) Contar caracteres de frase . \n" +
-                    "27) Mostrar palabras de una frase.                   28) Contar caracteres de frase . \n" +
+                    "27) Ordenar palabras de una frase.                   28) Sumar elementos de un array . \n" +
                     "0) Salir. \n";
             Integer option = Integer.parseInt(JOptionPane.showInputDialog(null, msgMenu, "MENU ", JOptionPane.INFORMATION_MESSAGE));
             switch (option) {
@@ -106,6 +106,9 @@ public class App {
                     countCharsWithoutBlanks();
                     break;
                 case 27:
+                    sortWordsOfPhrase();
+                    break;
+                case 28:
                     sumElementsArray();
                     break;
                 case 0:
@@ -113,6 +116,11 @@ public class App {
                     break;
             }
         } while (showMenu);
+    }
+
+    private static void sortWordsOfPhrase() {
+        String str = JOptionPane.showInputDialog(null, "Input a phrase: ", "SORT WORDS OF A PHRASE  ", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, ("The words of the phrase \"" + str + "\" are: \n" + OperationsWithNumbers.sortWordsOfPhrase(str)), "RESULTS ", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void sumElementsArray() {
